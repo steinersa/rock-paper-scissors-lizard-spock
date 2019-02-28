@@ -7,7 +7,6 @@ namespace RPSLS
     public class Game
     {
         //member variables (Has A)
-        
 
         //constructor
         public Game()
@@ -19,11 +18,10 @@ namespace RPSLS
         public void PlayGame()
         {
             ChooseHowManyPlayers();
-            CompareGestures();
-            //increment score by 1
+            CompareGestures(Player player1, Player player2);
             //if score is less than 2
-            //else say who won
             //go back to choosegesture under player
+            //else say who won
         }
 
 
@@ -43,14 +41,14 @@ namespace RPSLS
                 }
         }
 
-       public void CompareGestures()
+       public void CompareGestures(Player player1, Player player2)
         {
             if (player1.gesture == "rock" && player2.gesture =="scissors")
             {
-                Console.WriteLine("{0}'s rock crushes {0}'s scissors! Round point goes to {0}", name, name);
-                //increment score
+                Console.WriteLine("Rock crushes scissors! Round point goes to {0}", player1.name);
+                player1.score++;
             }
-            if (player1.)
+            if (player1.gesture ==
         }
 
     }
