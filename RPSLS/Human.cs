@@ -10,20 +10,19 @@ namespace RPSLS
         //constructor
         public Human()
         {
-            this.name = EnterName();
+         
         }
 
         //member methods (Can Do)
-        public override string EnterName()
+        public override void EnterName()
         {
             Console.WriteLine("Please enter your name:");
-            string UserInputName = Console.ReadLine();
-            return UserInputName;
+            name = Console.ReadLine();
         }
 
         public override void ChooseGesture()
         {
-            Console.WriteLine("Please enter the gesture you'd like to throw (rock, paper, scissors, lizard, or spock):");
+            Console.WriteLine("{0}, please enter the gesture you'd like to throw (rock, paper, scissors, lizard, or spock).", this.name);
             gesture = Console.ReadLine();
         }
     }

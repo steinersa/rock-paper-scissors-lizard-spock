@@ -11,13 +11,13 @@ namespace RPSLS
         //constructor
         public Computer()
         {
-            this.name = EnterName();
+        
         }
 
         //member methods (Can Do)
-        public override string EnterName()
+        public override void EnterName()
         {
-            return "Computer";
+            name = "Computer";
         }
 
         public override void ChooseGesture()

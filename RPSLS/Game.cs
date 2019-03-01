@@ -9,6 +9,7 @@ namespace RPSLS
         //member variables (Has A)
         public Player player1;
         public Player player2;
+        public string answer;
 
         //constructor
         public Game()
@@ -20,6 +21,7 @@ namespace RPSLS
         public void GameSetup()
         {
             ChooseHowManyPlayers();
+            GetNames();
             PlayGame();
         }
 
@@ -32,18 +34,29 @@ namespace RPSLS
 
         public void ChooseHowManyPlayers()
         {
-            Console.WriteLine("How many players?");
+            Console.WriteLine("How many players (1 or 2)?");
             string UserInputHowMany = Console.ReadLine();
-                if(UserInputHowMany == "1")
+                if (UserInputHowMany == "1")
                 {
                 player1 = new Human();
                 player2 = new Computer();
                 }
-                else if(UserInputHowMany == "2")
+                else if (UserInputHowMany == "2")
                 {
                 player1 = new Human();
                 player2 = new Human();
                 }
+                else
+                {
+                Console.WriteLine("Not an option. You'll be asked again. Please enter 1 or 2.");
+                ChooseHowManyPlayers();
+                }
+        }
+
+        public void GetNames()
+        {
+            player1.EnterName();
+            player2.EnterName();
         }
 
        public void CompareGestures()
@@ -160,12 +173,12 @@ namespace RPSLS
             if (player1.score == 2)
             {
                 Console.WriteLine("CONGRATS {0}! You are the game champion!", player1.name);
-                Console.ReadLine();
+                RestartGame();
             }
             if (player2.score == 2)
             {
-                Console.WriteLine("CONGRATS {0}! You are the game champion", player2.name);
-                Console.ReadLine();
+                Console.WriteLine("CONGRATS {0}! You are the game champion!", player2.name);
+                RestartGame();
             }
             else
             {
@@ -182,12 +195,21 @@ namespace RPSLS
 
         public void RestartGame()
         {
-
-        }
-
-        public void NoteToPlayer()
-        {
-            Console.ReadLine();
+            Console.WriteLine("Would you like to 'play again' or 'quit'?");
+            answer = Console.ReadLine();
+            if (answer == "play again")
+            {
+                GameSetup();
+            }
+            if (answer == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("Oops, didn't quite catch that. Please enter 'play again' or 'quit'.");
+                RestartGame();
+            }
         }
 
     }
