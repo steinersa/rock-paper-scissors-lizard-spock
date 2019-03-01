@@ -159,17 +159,17 @@ namespace RPSLS
         {
             if (player1.score == 2)
             {
-                Console.WriteLine("CONGRATS {0}! You are the game champion! Press any key to exit.", player1.name);
+                Console.WriteLine("CONGRATS {0}! You are the game champion!", player1.name);
                 Console.ReadLine();
             }
             if (player2.score == 2)
             {
-                Console.WriteLine("CONGRATS {0}! You are the game champion! Press any key to exit.", player2.name);
+                Console.WriteLine("CONGRATS {0}! You are the game champion", player2.name);
                 Console.ReadLine();
             }
             else
             {
-                Console.WriteLine("Next round!");
+                Console.WriteLine("NEXT ROUND!");
                 PlayGame();
             }
         }
