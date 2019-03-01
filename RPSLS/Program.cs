@@ -8,7 +8,7 @@ namespace RPSLS
         {
             Console.WriteLine("Welcome with rules");
             Game newGame = new Game();
-            newGame.PlayGame();
+            newGame.GameSetup();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace RPSLS
 
         //member methods (Can Do)
         public abstract string EnterName();
-        public abstract string ChooseGesture();
+        public abstract void ChooseGesture();
 
     }
 }

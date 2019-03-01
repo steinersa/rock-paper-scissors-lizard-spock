@@ -7,13 +7,11 @@ namespace RPSLS
     class Computer:Player
     {
 
-        //variavke
 
         //constructor
         public Computer()
         {
             this.name = EnterName();
-            this.gesture = ChooseGesture();
         }
 
         //member methods (Can Do)
@@ -22,11 +20,10 @@ namespace RPSLS
             return "Computer";
         }
 
-        public override string ChooseGesture()
+        public override void ChooseGesture()
         {
             List<string> gestures = new List<string>() { "rock", "paper", "scissors", "lizard", "spock" };
-            string gesture = gestures[RandomNumber(0, 5)];
-            return gesture;
+            gesture = gestures[RandomNumber(0, 5)];
         }
 
         public int RandomNumber(int min, int max)

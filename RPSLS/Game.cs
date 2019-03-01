@@ -17,20 +17,17 @@ namespace RPSLS
         }
 
         //member methods (Can Do)
-        public void PlayGame()
+        public void GameSetup()
         {
             ChooseHowManyPlayers();
-            CompareGestures();
-            NoteToPlayer();
-            CheckIfGameWinner();
-            MakeChoices();
-            CompareGestures();
-            NoteToPlayer();
-            CheckIfGameWinner();
+            PlayGame();
+        }
 
-            //if score is less than 2
-            //go back to choosegesture under player
-            //else say who won
+        public void PlayGame()
+        {
+            MakeChoice();
+            CompareGestures();
+            CheckIfGameWinner();
         }
 
         public void ChooseHowManyPlayers()
@@ -160,7 +157,6 @@ namespace RPSLS
 
         public void CheckIfGameWinner()
         {
-            //put loop in here if need to choosegesture again
             if (player1.score == 2)
             {
                 Console.WriteLine("CONGRATS {0}! You are the game champion! Press any key to exit.", player1.name);
@@ -174,11 +170,11 @@ namespace RPSLS
             else
             {
                 Console.WriteLine("Next round!");
-                MakeChoices();
+                PlayGame();
             }
         }
 
-        public void MakeChoices()
+        public void MakeChoice()
         {
             player1.ChooseGesture();
             player2.ChooseGesture();

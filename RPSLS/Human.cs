@@ -11,7 +11,6 @@ namespace RPSLS
         public Human()
         {
             this.name = EnterName();
-            this.gesture = ChooseGesture();
         }
 
         //member methods (Can Do)
@@ -22,11 +21,10 @@ namespace RPSLS
             return UserInputName;
         }
 
-        public override string ChooseGesture()
+        public override void ChooseGesture()
         {
             Console.WriteLine("Please enter the gesture you'd like to throw (rock, paper, scissors, lizard, or spock):");
-            string UserInputGesture = Console.ReadLine();
-            return UserInputGesture;
+            gesture = Console.ReadLine();
         }
     }
 }
