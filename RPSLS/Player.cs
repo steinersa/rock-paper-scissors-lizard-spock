@@ -10,6 +10,7 @@ namespace RPSLS
         public string name;
         public string gesture;
         public int score;
+        public string UserInputGesture;
        
         //constructor
         public Player()
